@@ -13,13 +13,13 @@
         { "name": "Giovanni Albero", "email": "giovanni.albero@fazland.com" }
     ],
     "require": {
-        "php": "^7.0",
+        "php": ">=5.6",
         "symfony/framework-bundle": "~2.7|~3.0",
         "symfony/console": "~2.7|~3.0",
         "symfony/form": "~2.7|~3.0",
         "symfony/property-access": "~2.7|~3.0",
         "psr/log": "~1.0",
-        "ruflin/elastica": "~5.0"
+        "ruflin/elastica": "dev-master"
     },
     "require-dev":{
         "doctrine/doctrine-bundle": "~1.6",
@@ -42,6 +42,12 @@
         "symfony/twig-bundle": "~2.7|~3.0",
         "symfony/yaml": "~2.7|~3.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nicklaw5/Elastica"
+        }
+    ],
     "autoload": {
         "psr-4": { "Fazland\\ElasticaBundle\\": "" }
     },
