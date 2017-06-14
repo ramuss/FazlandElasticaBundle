@@ -37,13 +37,13 @@ class Client extends BaseClient
      *
      * @return \Elastica\Response
      */
-    public function request($path, $method = Request::GET, $data = [], array $query = [])
+    public function request($path, $method = Request::GET, $data = [], array $query = [], $contentType = 'application/json')
     {
         if ($this->stopwatch) {
             $this->stopwatch->start('es_request', 'fazland_elastica');
         }
 
-        $response = parent::request($path, $method, $data, $query);
+        $response = parent::request($path, $method, $data, $query, $contentType);
         $responseData = $response->getData();
 
         if (isset($responseData['took']) && isset($responseData['hits'])) {
